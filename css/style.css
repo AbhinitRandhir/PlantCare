@@ -68,10 +68,15 @@ img{
     background:#ffffff;
     padding:12px 0;
     border-bottom:1px solid #e8e8e8;
-    transition:.3s ease;
+    box-shadow:0 2px 12px rgba(0,0,0,.05);
+    transition:.3s;
     z-index:1000;
 
 }
+
+/*==========================================
+            LOGO
+==========================================*/
 
 .navbar-brand{
 
@@ -79,7 +84,6 @@ img{
     font-weight:700;
     color:#2E7D32 !important;
     letter-spacing:.5px;
-    transition:.3s;
 
 }
 
@@ -89,9 +93,9 @@ img{
 
 }
 
-/*==========================
-        MENU
-==========================*/
+/*==========================================
+            MENU
+==========================================*/
 
 .navbar-nav{
 
@@ -117,8 +121,6 @@ img{
 
 }
 
-/* Active */
-
 .nav-link.active{
 
     color:#2E7D32 !important;
@@ -127,7 +129,7 @@ img{
 }
 
 /*==========================================
-        NAV LINK UNDERLINE
+        UNDERLINE ANIMATION
 ==========================================*/
 
 .nav-link::after{
@@ -145,15 +147,13 @@ img{
 
 }
 
-/* Hover */
-
 .nav-link:hover::after{
 
     width:60%;
 
 }
 
-/* Active */
+/* Active page par underline hide */
 
 .nav-link.active::after{
 
@@ -161,21 +161,16 @@ img{
 
 }
 
-
-/*==========================
-        GET STARTED
-==========================*/
-
-/*==========================
-        GET STARTED BUTTON
-==========================*/
+/*==========================================
+        GET STARTED / USER BUTTON
+==========================================*/
 
 #guestMenu .btn,
 #userMenu .btn{
 
     background:#2E7D32;
-    border:none;
     color:#fff;
+    border:none;
     border-radius:30px;
     padding:10px 22px;
     font-weight:600;
@@ -196,10 +191,9 @@ img{
 
 }
 
-
-/*==========================
-        DROPDOWN
-==========================*/
+/*==========================================
+            DROPDOWN
+==========================================*/
 
 .dropdown-menu{
 
@@ -226,10 +220,9 @@ img{
 
 }
 
-
-/*==========================
-        THEME BUTTON
-==========================*/
+/*==========================================
+            THEME BUTTON
+==========================================*/
 
 #themeBtn{
 
@@ -237,8 +230,15 @@ img{
     height:44px;
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    transition:.3s;
+
+}
+
+#themeBtn i{
+
+    font-size:18px;
     transition:.3s;
 
 }
@@ -246,16 +246,20 @@ img{
 #themeBtn:hover{
 
     background:#2E7D32;
-    color:#fff;
     border-color:#2E7D32;
+    color:#fff;
+
+}
+
+#themeBtn:hover i{
+
     transform:rotate(20deg);
 
 }
 
-
-/*==========================
-        TOGGLER
-==========================*/
+/*==========================================
+        NAVBAR TOGGLER
+==========================================*/
 
 .navbar-toggler{
 
@@ -269,25 +273,11 @@ img{
 
 }
 
-
-#themeBtn i{
-
-    transition:.3s;
-    font-size:18px;
-
-}
-
-#themeBtn:hover i{
-
-    transform:rotate(20deg);
-
-}
-
 /*==========================================
         RESPONSIVE NAVBAR
 ==========================================*/
 
-@media (max-width:991px){
+@media(max-width:991px){
 
     .navbar{
 
@@ -297,19 +287,18 @@ img{
 
     .navbar-collapse{
 
+        background:#ffffff;
         margin-top:12px;
-        background:#fff;
+        padding:18px;
         border-radius:12px;
-        padding:15px;
         box-shadow:0 8px 20px rgba(0,0,0,.08);
 
     }
 
     .navbar-nav{
 
-        align-items:flex-start !important;
-        text-align:left;
         width:100%;
+        align-items:flex-start;
 
     }
 
@@ -346,36 +335,125 @@ img{
     #userMenu .btn{
 
         width:100%;
-        justify-content:center;   /* Text center */
+        display:flex;
+        justify-content:center;
+        align-items:center;
         text-align:center;
         border-radius:10px;
 
+    }
+
+    .dropdown-menu{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .dropdown-item{
+
+        text-align:center;
 
     }
 
     #themeBtn{
 
         margin-top:15px;
-        margin-left:0;
-        align-self:flex-start;
 
     }
 
 }
 
+/*==========================================
+            DARK MODE
+==========================================*/
 
+.dark-mode .navbar{
+
+    background:#1a1a1a;
+    border-bottom:1px solid #333;
+
+}
+
+.dark-mode .navbar-brand{
+
+    color:#ffffff !important;
+
+}
+/* 
 .dark-mode .navbar-collapse{
 
-    background:#1a1a1a !important;
+    background:#1a1a1a;
+    border:1px solid #333;
+
+} */
+
+.dark-mode .nav-link{
+
+    color:#ffffff !important;
+
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active{
+
+    color:#66BB6A !important;
+
+}
+
+.dark-mode .dropdown-menu{
+
+    background:#1e1e1e;
     border:1px solid #333;
 
 }
 
-.dark-mode .navbar-nav{
+.dark-mode .dropdown-item{
 
-    align-items:flex-start !important;
+    color:#ffffff;
 
 }
+
+.dark-mode .dropdown-item:hover{
+
+    background:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .navbar-toggler-icon{
+
+    filter:invert(1);
+
+}
+
+.dark-mode #themeBtn{
+
+    color:#66BB6A;
+    border-color:#66BB6A;
+
+}
+
+/*==========================================
+        DARK MODE TOGGLER
+==========================================*/
+
+.dark-mode .navbar-toggler{
+
+    border:1px solid #ffffff;
+
+}
+
+.dark-mode .navbar-toggler-icon{
+
+    filter:brightness(0) invert(1);
+
+}
+
+
+
+
+
 /*==========================================
             HERO SECTION
 ==========================================*/
