@@ -92,9 +92,9 @@ PlantCare
 
 ---
 
-## 💾 Local Storage
+---
 
-The project stores data in the browser using Local Storage.
+## Local Storage
 
 - users
 - loggedInUser
@@ -104,62 +104,35 @@ The project stores data in the browser using Local Storage.
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
-1. Download or Clone the repository.
-
-```
+```bash
 git clone https://github.com/AbhinitRandhir/PlantCare.git
 ```
 
-2. Open the project folder.
-
-3. Open `index.html` in your browser.
-
-Or use **Live Server** in VS Code.
+Open **index.html** in a browser or run with **Live Server**.
 
 ---
 
-## 📸 Screenshots
+## Future Improvements
 
-Add project screenshots here.
-
-Example:
-
-```
-screenshots/home.png
-screenshots/plants.png
-screenshots/login.png
-```
-
----
-
-## 🔮 Future Enhancements
-
-- Java Spring Boot Backend
-- MySQL Database
+- Java Spring Boot
+- MySQL
 - Email Verification
 - OTP Authentication
-- Plant Watering Reminder
+- Plant Reminder
 - Weather API
 - AI Plant Disease Detection
-- User Dashboard
-- Admin Panel
 
 ---
 
-## 👨‍💻 Developer
+## Developer
 
 **Abhinit Kumar**
-
-Frontend Developer
 
 GitHub: https://github.com/AbhinitRandhir
 
 LinkedIn: https://www.linkedin.com/in/abhinit94
 
----
-
-## 📄 License
-
+## License
 This project is developed for learning and educational purposes.
