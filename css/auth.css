@@ -329,3 +329,23 @@
     }
 
 }
+
+.togglePassword{
+
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    background:none;
+    border:none;
+    color:#666;
+    cursor:pointer;
+    font-size:17px;
+
+}
+
+.togglePassword:hover{
+
+    color:#2E7D32;
+
+}
