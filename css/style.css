@@ -166,6 +166,10 @@ img{
         GET STARTED
 ==========================*/
 
+/*==========================
+        GET STARTED BUTTON
+==========================*/
+
 #guestMenu .btn,
 #userMenu .btn{
 
@@ -173,8 +177,12 @@ img{
     border:none;
     color:#fff;
     border-radius:30px;
-    padding:9px 22px;
+    padding:10px 22px;
     font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
     transition:.3s;
 
 }
@@ -275,11 +283,11 @@ img{
 
 }
 
-/*==========================
-        RESPONSIVE
-==========================*/
+/*==========================================
+        RESPONSIVE NAVBAR
+==========================================*/
 
-@media(max-width:991px){
+@media (max-width:991px){
 
     .navbar{
 
@@ -289,22 +297,34 @@ img{
 
     .navbar-collapse{
 
-        margin-top:15px;
+        margin-top:12px;
         background:#fff;
         border-radius:12px;
         padding:15px;
+        box-shadow:0 8px 20px rgba(0,0,0,.08);
 
     }
 
     .navbar-nav{
 
-        gap:0;
+        align-items:flex-start !important;
+        text-align:left;
+        width:100%;
+
+    }
+
+    .nav-item{
+
+        width:100%;
 
     }
 
     .nav-link{
 
-        padding:12px !important;
+        display:block;
+        width:100%;
+        padding:12px 0 !important;
+        text-align:left;
 
     }
 
@@ -317,20 +337,45 @@ img{
     #guestMenu,
     #userMenu{
 
+        width:100%;
         margin-top:15px;
+
+    }
+
+    #guestMenu .btn,
+    #userMenu .btn{
+
+        width:100%;
+        justify-content:center;   /* Text center */
+        text-align:center;
+        border-radius:10px;
+
 
     }
 
     #themeBtn{
 
         margin-top:15px;
+        margin-left:0;
+        align-self:flex-start;
 
     }
 
 }
 
 
+.dark-mode .navbar-collapse{
 
+    background:#1a1a1a !important;
+    border:1px solid #333;
+
+}
+
+.dark-mode .navbar-nav{
+
+    align-items:flex-start !important;
+
+}
 /*==========================================
             HERO SECTION
 ==========================================*/

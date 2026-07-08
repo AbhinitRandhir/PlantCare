@@ -75,12 +75,21 @@ if(topBtn){
 //==========================================
 
 const themeBtn = document.getElementById("themeBtn");
-const themeIcon = themeBtn?.querySelector("i");
+const themeIcon = document.querySelector("#themeBtn i");
+const navbar = document.querySelector(".navbar");
 
-// Page load
-if (localStorage.getItem("theme") === "dark") {
+//==========================================
+// APPLY SAVED THEME
+//==========================================
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
 
     document.body.classList.add("dark-mode");
+
+    navbar?.classList.remove("navbar-light");
+    navbar?.classList.add("navbar-dark");
 
     if (themeIcon) {
 
@@ -90,8 +99,27 @@ if (localStorage.getItem("theme") === "dark") {
     }
 
 }
+else {
 
-themeBtn?.addEventListener("click", () => {
+    document.body.classList.remove("dark-mode");
+
+    navbar?.classList.remove("navbar-dark");
+    navbar?.classList.add("navbar-light");
+
+    if (themeIcon) {
+
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+
+    }
+
+}
+
+//==========================================
+// THEME BUTTON
+//==========================================
+
+themeBtn?.addEventListener("click", function () {
 
     document.body.classList.toggle("dark-mode");
 
@@ -99,15 +127,22 @@ themeBtn?.addEventListener("click", () => {
 
         localStorage.setItem("theme", "dark");
 
-        themeIcon.classList.remove("fa-moon");
-        themeIcon.classList.add("fa-sun");
+        navbar?.classList.remove("navbar-light");
+        navbar?.classList.add("navbar-dark");
 
-    } else {
+        themeIcon?.classList.remove("fa-moon");
+        themeIcon?.classList.add("fa-sun");
+
+    }
+    else {
 
         localStorage.setItem("theme", "light");
 
-        themeIcon.classList.remove("fa-sun");
-        themeIcon.classList.add("fa-moon");
+        navbar?.classList.remove("navbar-dark");
+        navbar?.classList.add("navbar-light");
+
+        themeIcon?.classList.remove("fa-sun");
+        themeIcon?.classList.add("fa-moon");
 
     }
 
