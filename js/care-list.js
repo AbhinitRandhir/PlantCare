@@ -1,31 +1,58 @@
-
 //==========================================
-// Care List Page
+// CARE LIST PAGE
 //==========================================
 
 const careListContainer = document.getElementById("careListContainer");
 
-const careList = JSON.parse(localStorage.getItem("careList")) || [];
+let careList = JSON.parse(
+
+    localStorage.getItem("careList")
+
+) || [];
 
 displayCareList();
+
+
+//==========================================
+// DISPLAY CARE LIST
+//==========================================
 
 function displayCareList() {
 
     if (!careListContainer) return;
 
-    // Empty State
+    careList = JSON.parse(
+
+        localStorage.getItem("careList")
+
+    ) || [];
+
+    updateCareCount();
+
+    //======================================
+    // EMPTY STATE
+    //======================================
+
     if (careList.length === 0) {
 
         careListContainer.innerHTML = `
 
-            <div class="text-center">
+            <div class="col-12 text-center py-5">
+
+                <i class="fa-solid fa-seedling fa-4x text-success mb-3"></i>
 
                 <h3>Your Care List is Empty 🌱</h3>
 
-                <p>Add some plants from the Plants page.</p>
+                <p class="text-muted">
+
+                    Add your favorite plants from the Plants page.
+
+                </p>
 
                 <a href="plants.html" class="details-btn">
+
                     Explore Plants
+
                 </a>
 
             </div>
@@ -33,15 +60,23 @@ function displayCareList() {
         `;
 
         return;
+
     }
+
+    //======================================
+    // PLANT CARDS
+    //======================================
 
     let cards = "";
 
-    careList.forEach((plant) => {
+    careList.forEach((plant, index) => {
 
         cards += `
 
-        <div class="col-md-6 col-lg-3">
+        <div
+            class="col-md-6 col-lg-3"
+            data-aos="zoom-in"
+            data-aos-delay="${index * 100}">
 
             <div class="plant-card">
 
@@ -49,22 +84,31 @@ function displayCareList() {
 
                 <div class="plant-info">
 
-    <h4>${plant.name}</h4>
+                    <h4>${plant.name}</h4>
 
-    <div class="plant-btn">
+                    <div class="plant-btn">
 
-        <button class="details-btn" data-id="${plant.id}">
-            Care Guide
-        </button>
+                        <button
+                            class="details-btn"
+                            data-id="${plant.id}">
 
-        <button class="remove-btn" data-id="${plant.id}">
-            <i class="fa-solid fa-trash"></i>
-            Remove
-        </button>
+                            Care Guide
 
-    </div>
+                        </button>
 
-</div>
+                        <button
+                            class="remove-btn"
+                            data-id="${plant.id}">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Remove
+
+                        </button>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -76,12 +120,17 @@ function displayCareList() {
 
     careListContainer.innerHTML = cards;
 
+    if (typeof AOS !== "undefined") {
+
+        AOS.refresh();
+
+    }
+
 }
 
 
-
 //==========================================
-// Remove Plant
+// REMOVE PLANT
 //==========================================
 
 document.addEventListener("click", function (e) {
@@ -92,10 +141,63 @@ document.addEventListener("click", function (e) {
 
     const id = Number(btn.dataset.id);
 
-    const updatedCareList = careList.filter(plant => plant.id !== id);
+    careList = careList.filter(
 
-    localStorage.setItem("careList", JSON.stringify(updatedCareList));
+        plant => plant.id !== id
 
-    location.reload();
+    );
+
+    localStorage.setItem(
+
+        "careList",
+
+        JSON.stringify(careList)
+
+    );
+
+    updateCareCount();
+
+    displayCareList();
+
+    if (typeof showToast === "function") {
+
+        showToast("🗑️ Plant removed from Care List");
+
+    }
 
 });
+
+
+//==========================================
+// CARE LIST COUNTER
+//==========================================
+
+function updateCareCount() {
+
+    const badge = document.getElementById("careCount");
+
+    if (!badge) return;
+
+    badge.textContent = careList.length;
+
+    // Hide badge if empty
+
+    if (careList.length === 0) {
+
+        badge.style.display = "none";
+
+    }
+    else {
+
+        badge.style.display = "inline-flex";
+
+    }
+
+}
+
+
+//==========================================
+// INITIALIZE
+//==========================================
+
+updateCareCount();

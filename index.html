@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/plants.css"> -->
@@ -28,194 +31,203 @@
 </head>
 
 <body>
+    <!--==========================================
+            PAGE LOADER
+===========================================-->
 
-<!-- ==========================
-        Navbar Start
-========================== -->
+<div id="loader">
 
-<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="loader-content">
 
-    <div class="container">
+        <div class="loader-logo">
 
-        <!-- Logo -->
-
-        <a class="navbar-brand" href="index.html">
-
-            🌱 PlantCare
-
-        </a>
-
-        <!-- Mobile Toggle -->
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <!-- Menu -->
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-
-                    <a class="nav-link active" href="index.html">
-
-                        Home
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="plants.html">
-
-                        Plants
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="care-list.html">
-
-                        Care List
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="about.html">
-
-                        About
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a class="nav-link" href="contact.html">
-
-                        Contact
-
-                    </a>
-
-                </li>
-
-
-                <!-- Guest -->
-
-                <li class="nav-item dropdown ms-lg-3" id="guestMenu">
-
-                    <button
-                        class="btn dropdown-toggle"
-                        data-bs-toggle="dropdown">
-
-                        Get Started
-
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-end">
-
-                        <li>
-
-                            <a class="dropdown-item" href="login.html">
-
-                                <i class="fa-solid fa-right-to-bracket me-2"></i>
-
-                                Login
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a class="dropdown-item" href="signup.html">
-
-                                <i class="fa-solid fa-user-plus me-2"></i>
-
-                                Signup
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <!-- Logged In -->
-
-                <li class="nav-item dropdown d-none ms-lg-3" id="userMenu">
-
-                    <button
-                        class="btn dropdown-toggle"
-                        data-bs-toggle="dropdown">
-
-                        <i class="fa-solid fa-user me-2"></i>
-
-                        <span id="userName"></span>
-
-                    </button>
-
-                    <ul class="dropdown-menu dropdown-menu-end">
-
-                        <li>
-
-                            <a
-                                class="dropdown-item"
-                                href="#"
-                                id="logoutBtn">
-
-                                <i class="fa-solid fa-right-from-bracket me-2"></i>
-
-                                Logout
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <!-- Theme -->
-
-                <li class="nav-item ms-lg-3">
-
-                    <button
-                        class="btn btn-outline-success"
-                        id="themeBtn">
-
-                        <i class="fa-solid fa-moon"></i>
-
-                    </button>
-
-                </li>
-
-            </ul>
+            🌱
 
         </div>
 
+        <h3>PlantCare</h3>
+
+        <div class="loader-line"></div>
+
     </div>
 
-</nav>
+</div>
 
-<!-- ==========================
+
+    <!-- ==========================
+        Navbar Start
+========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+        <div class="container">
+
+            <!-- Logo -->
+
+            <a class="navbar-brand" href="index.html">
+
+                🌱 PlantCare
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="plants.html">
+
+                            Plants
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="care-list.html">
+
+                            Care List
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="about.html">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="contact.html">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Guest -->
+
+                    <li class="nav-item dropdown ms-lg-3" id="guestMenu">
+
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
+
+                            Get Started
+
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li>
+
+                                <a class="dropdown-item" href="login.html">
+
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i>
+
+                                    Login
+
+                                </a>
+
+                            </li>
+
+                            <li>
+
+                                <a class="dropdown-item" href="signup.html">
+
+                                    <i class="fa-solid fa-user-plus me-2"></i>
+
+                                    Signup
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- Logged In -->
+
+                    <li class="nav-item dropdown d-none ms-lg-3" id="userMenu">
+
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
+
+                            <i class="fa-solid fa-user me-2"></i>
+
+                            <span id="userName"></span>
+
+                        </button>
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+                            <li>
+
+                                <a class="dropdown-item" href="#" id="logoutBtn">
+
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
+
+                                    Logout
+
+                                </a>
+
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+
+                    <!-- Theme -->
+
+                    <li class="nav-item ms-lg-3">
+
+                        <button class="btn btn-outline-success" id="themeBtn">
+
+                            <i class="fa-solid fa-moon"></i>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ==========================
         Navbar End
 ========================== -->
 
@@ -231,7 +243,7 @@
             <div class="row align-items-center">
 
                 <!-- Left Content -->
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
 
                     <h1 class="display-4 fw-bold">
                         Grow Healthy <span class="text-success">Plants</span> with PlantCare
@@ -252,7 +264,7 @@
                 </div>
 
                 <!-- Right Image -->
-                <div class="col-lg-6 d-flex justify-content-end align-items-center mt-5 mt-lg-0">
+                <div class="col-lg-6 d-flex justify-content-end align-items-center mt-5 mt-lg-0" data-aos="fade-left">
 
                     <img src="images/hero-plant.png" alt="Plant Hero" class="img-fluid hero-img mt-4">
 
@@ -275,43 +287,78 @@
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
+
                 <h2>Plant Categories</h2>
+
                 <p>Choose the perfect plants based on your needs.</p>
+
             </div>
 
             <div class="row">
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 1 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
+
                     <div class="category-card">
+
                         <i class="fa-solid fa-house category-icon"></i>
+
                         <h4>Indoor Plants</h4>
+
                         <p>Easy to grow plants for your home and office.</p>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 2 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+
                     <div class="category-card">
+
                         <i class="fa-solid fa-seedling category-icon"></i>
+
                         <h4>Outdoor Plants</h4>
+
                         <p>Beautiful plants that thrive in open spaces.</p>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 3 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+
                     <div class="category-card">
+
                         <i class="fa-solid fa-spa category-icon"></i>
+
                         <h4>Succulents</h4>
+
                         <p>Low-maintenance plants perfect for beginners.</p>
+
                     </div>
+
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 4 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+
                     <div class="category-card">
+
                         <i class="fa-solid fa-leaf category-icon"></i>
+
                         <h4>Flowering Plants</h4>
+
                         <p>Add color and fragrance to your surroundings.</p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -330,7 +377,7 @@
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
 
                 <h2>Featured Plants</h2>
 
@@ -340,7 +387,7 @@
 
             </div>
 
-            <div class="row" id="featuredPlants">
+            <div class="row" id="featuredPlants" data-aos="fade-up" data-aos-delay="200">
 
                 <!-- JavaScript -->
 
@@ -350,26 +397,29 @@
 
     </section>
 
-
     <!--==========================================
-            WHY CHOOSE US
-===========================================-->
+        WHY CHOOSE US
+    ===========================================-->
 
     <section class="why-us">
 
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-up">
 
                 <h2>Why Choose PlantCare?</h2>
 
-                <p>Everything you need to keep your home plants healthy and beautiful.</p>
+                <p>
+                    Everything you need to keep your home plants healthy and beautiful.
+                </p>
 
             </div>
 
             <div class="row">
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 1 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="0">
 
                     <div class="why-card">
 
@@ -383,7 +433,9 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 2 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
 
                     <div class="why-card">
 
@@ -397,7 +449,9 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 3 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
 
                     <div class="why-card">
 
@@ -411,7 +465,9 @@
 
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <!-- Card 4 -->
+
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
 
                     <div class="why-card">
 
@@ -432,12 +488,128 @@
     </section>
 
 
+    <!--==========================================
+            STATISTICS
+===========================================-->
+
+<section class="stats" data-aos="fade-up">
+
+    <div class="container">
+
+        <!-- Section Title -->
+
+        <div class="section-title"
+            data-aos="fade-up"
+            data-aos-duration="1000">
+
+            <h2>Our Growing Community</h2>
+
+            <p>
+
+                PlantCare is helping plant lovers with easy care guides,
+                healthy plant collections, and a growing community of
+                nature enthusiasts.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Card 1 -->
+
+            <div class="col-6 col-lg-3"
+                data-aos="zoom-in-up"
+                data-aos-delay="100"
+                data-aos-duration="900">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    <h2 class="counter" data-target="50">0</h2>
+
+                    <span>+</span>
+
+                    <p>Plants</p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-6 col-lg-3"
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+                data-aos-duration="900">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2 class="counter" data-target="500">0</h2>
+
+                    <span>+</span>
+
+                    <p>Happy Users</p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="col-6 col-lg-3"
+                data-aos="zoom-in-up"
+                data-aos-delay="300"
+                data-aos-duration="900">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <h2 class="counter" data-target="100">0</h2>
+
+                    <span>+</span>
+
+                    <p>Care Guides</p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="col-6 col-lg-3"
+                data-aos="zoom-in-up"
+                data-aos-delay="400"
+                data-aos-duration="900">
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <h2>4.9</h2>
+
+                    <p>User Rating</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
     <!--==========================================
             FOOTER
     ===========================================-->
 
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
 
         <div class="container">
 
@@ -535,7 +707,7 @@
         </div>
 
     </div>
-
+    
 
     <!--==========================================
             BACK TO TOP
@@ -547,6 +719,23 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            duration: 800,
+
+            once: true,
+
+            offset: 80,
+
+            easing: "ease-in-out",
+
+            mirror: false
+
+        });
+    </script>
 
     <!-- Custom JS -->
     <script src="js/plants-data.js"></script>

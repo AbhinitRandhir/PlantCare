@@ -280,3 +280,231 @@
 
 }
 
+
+
+/*==========================================
+            DARK MODE
+==========================================*/
+
+.dark-mode .plant-filter,
+.dark-mode .all-plants{
+
+    background:#121212;
+
+}
+
+/* Search & Filter */
+
+.dark-mode .filter-box input,
+.dark-mode .filter-box select{
+
+    background:#1e1e1e;
+    color:#ffffff;
+    border:1px solid #444;
+
+}
+
+.dark-mode .filter-box input::placeholder{
+
+    color:#aaaaaa;
+
+}
+
+.dark-mode .filter-box select option{
+
+    background:#1e1e1e;
+    color:#ffffff;
+
+}
+
+/* Plant Card */
+
+.dark-mode .plant-card{
+
+    background:#1e1e1e;
+    border:1px solid #333;
+
+}
+
+.dark-mode .plant-card:hover{
+
+    box-shadow:0 10px 20px rgba(255,255,255,.08);
+
+}
+
+.dark-mode .plant-info h4{
+
+    color:#66BB6A;
+
+}
+
+/* Buttons */
+
+.dark-mode .details-btn{
+
+    background:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .details-btn:hover{
+
+    background:#1B5E20;
+
+}
+
+.dark-mode .care-btn{
+
+    background:#66BB6A;
+    color:#ffffff;
+
+}
+
+.dark-mode .care-btn:hover{
+
+    background:#4CAF50;
+
+}
+
+/* Modal */
+
+.dark-mode .modal-content{
+
+    background:#1e1e1e;
+    color:#ffffff;
+
+}
+
+.dark-mode .modal-header{
+
+    background:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .modal-body h3{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .modal-body p{
+
+    color:#dddddd;
+
+}
+
+/* Details Box */
+
+.dark-mode .detail-item{
+
+    background:#2a2a2a;
+    border:1px solid #444;
+
+}
+
+.dark-mode .detail-item i{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .detail-item span{
+
+    color:#ffffff;
+
+}
+
+/* Care Tips */
+
+.dark-mode .care-tips h5{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .care-tips li{
+
+    color:#dddddd;
+
+}
+
+
+/*==========================================
+        SEARCH RESULT
+==========================================*/
+
+.search-result{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+#resultCount{
+
+    color:#2E7D32;
+    font-size:16px;
+    font-weight:600;
+
+}
+
+.dark-mode #resultCount{
+
+    color:#66BB6A;
+
+}
+
+
+/*==========================================
+        NO RESULT
+==========================================*/
+
+.no-result{
+
+    padding:80px 20px;
+    text-align:center;
+
+}
+
+.no-result i{
+
+    font-size:70px;
+    color:#2E7D32;
+    margin-bottom:20px;
+
+}
+
+.no-result h3{
+
+    color:#2E7D32;
+    margin-bottom:10px;
+    font-size:30px;
+
+}
+
+.no-result p{
+
+    color:#666;
+
+}
+
+/* Dark Mode */
+
+.dark-mode .no-result h3{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .no-result p{
+
+    color:#ccc;
+
+}
+
+.dark-mode .no-result i{
+
+    color:#66BB6A;
+
+}

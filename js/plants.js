@@ -9,6 +9,7 @@ const allPlants = document.getElementById("allPlants");
 if (allPlants) {
 
     displayPlants(plants);
+    
 
 }
 
@@ -18,13 +19,48 @@ if (allPlants) {
 
 function displayPlants(plantList) {
 
+    if (!allPlants) return;
+
+    //======================================
+    // NO RESULT
+    //======================================
+
+    if (plantList.length === 0) {
+
+        allPlants.innerHTML = `
+
+        <div class="col-12">
+
+            <div class="no-result">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <h3>No Plants Found</h3>
+
+                <p>Try another keyword.</p>
+
+            </div>
+
+        </div>
+
+        `;
+
+        updateResultCount(0);
+
+        return;
+
+    }
+
     let cards = "";
 
-    plantList.forEach((plant) => {
+    plantList.forEach((plant,index)=>{
 
         cards += `
 
-        <div class="col-md-6 col-lg-3">
+        <div
+            class="col-md-6 col-lg-3"
+            data-aos="zoom-in"
+            data-aos-delay="${index*100}">
 
             <div class="plant-card">
 
@@ -32,21 +68,27 @@ function displayPlants(plantList) {
 
                 <div class="plant-info">
 
-    <h4>${plant.name}</h4>
+                    <h4>${plant.name}</h4>
 
-    <div class="plant-btn">
+                    <div class="plant-btn">
 
-        <button class="details-btn" data-id="${plant.id}">
-            Care Guide
-        </button>
+                        <button
+                            class="details-btn"
+                            data-id="${plant.id}">
 
-        <button class="care-btn" data-id="${plant.id}">
-            + Add
-        </button>
+                            Care Guide
 
-    </div>
+                        </button>
 
-</div>
+                        <button
+                            class="care-btn"
+                            data-id="${plant.id}">
+
+                            + Add
+
+                        </button>
+
+                    </div>
 
                 </div>
 
@@ -60,8 +102,15 @@ function displayPlants(plantList) {
 
     allPlants.innerHTML = cards;
 
-}
+    updateResultCount(plantList.length);
 
+    if(typeof AOS !== "undefined"){
+
+        AOS.refresh();
+
+    }
+
+}
 
 //==========================================
 // Live Search
@@ -71,7 +120,7 @@ const searchPlant = document.getElementById("searchPlant");
 
 if (searchPlant) {
 
-    searchPlant.addEventListener("keyup", function () {
+    searchPlant.addEventListener("input", function () {
 
         const searchValue = this.value.toLowerCase();
 
@@ -144,11 +193,18 @@ document.addEventListener("click", function (e) {
 
     careList.push(plant);
 
-    localStorage.setItem("careList", JSON.stringify(careList));
+    localStorage.setItem(
+
+    "careList",
+
+    JSON.stringify(careList)
+
+    );
+
+    updateCareCount();
 
     showToast("Plant added to Care List 🌱");
-
-});
+    });
 
 
 //==========================================
@@ -169,5 +225,38 @@ function showToast(message){
     );
 
     toast.show();
+
+}
+
+
+
+//==========================================
+// RESULT COUNTER
+//==========================================
+
+function updateResultCount(total){
+
+    const resultCount =
+        document.getElementById("resultCount");
+
+    if(!resultCount) return;
+
+    if(total===0){
+
+        resultCount.textContent="No Plants Found";
+
+    }
+
+    else{
+
+        resultCount.textContent=
+
+        `Showing ${total} Plant${
+
+            total>1 ? "s" : ""
+
+        }`;
+
+    }
 
 }

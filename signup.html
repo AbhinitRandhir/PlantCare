@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/auth.css">
@@ -210,7 +213,7 @@
 
         <div class="container">
 
-            <div class="auth-card">
+            <div class="auth-card" data-aos="zoom-in">
 
                 <div class="auth-logo">
 
@@ -328,8 +331,52 @@
     </section>
 
 
+    <!-- Toast -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+        <div id="liveToast" class="toast" role="alert">
+
+            <div class="toast-header">
+
+                <strong class="me-auto">
+
+                    🌱 PlantCare
+
+                </strong>
+
+                <button type="button" class="btn-close" data-bs-dismiss="toast">
+                </button>
+
+            </div>
+
+            <div class="toast-body" id="toastMessage">
+
+            </div>
+
+        </div>
+
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            duration: 800,
+
+            once: true,
+
+            offset: 80,
+
+            easing: "ease-in-out",
+
+            mirror: false
+
+        });
+    </script>
 
     <script src="js/script.js"></script>
 

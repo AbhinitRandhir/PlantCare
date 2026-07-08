@@ -162,3 +162,115 @@
     }
 
 }
+/*==========================================
+            DARK MODE
+==========================================*/
+
+.dark-mode .contact{
+
+    background:#121212;
+
+}
+
+/* Contact Info */
+
+.dark-mode .contact-info{
+
+    background:#1e1e1e;
+    border:1px solid #333;
+
+}
+
+.dark-mode .contact-info h2{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .contact-info > p{
+
+    color:#dddddd;
+
+}
+
+/* Info Box */
+
+.dark-mode .info-box i{
+
+    background:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .info-box h5{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .info-box p{
+
+    color:#dddddd;
+
+}
+
+/* Contact Form */
+
+.dark-mode .contact-form{
+
+    background:#1e1e1e;
+    border:1px solid #333;
+    box-shadow:none;
+
+}
+
+/* Form Controls */
+
+.dark-mode .contact-form .form-control{
+
+    background:#2a2a2a;
+    color:#ffffff;
+    border:1px solid #444;
+
+}
+
+.dark-mode .contact-form .form-control:focus{
+
+    background:#2a2a2a;
+    color:#ffffff;
+    border-color:#66BB6A;
+    box-shadow:0 0 0 .15rem rgba(102,187,106,.25);
+
+}
+
+.dark-mode .contact-form .form-control::placeholder{
+
+    color:#aaaaaa;
+
+}
+
+/* Textarea */
+
+.dark-mode .contact-form textarea{
+
+    background:#2a2a2a;
+    color:#ffffff;
+
+}
+
+/* Button */
+
+.dark-mode .contact-form .btn{
+
+    background:#2E7D32;
+    border-color:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .contact-form .btn:hover{
+
+    background:#1B5E20;
+    border-color:#1B5E20;
+
+}

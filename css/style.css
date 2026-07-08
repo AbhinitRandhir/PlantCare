@@ -1093,3 +1093,536 @@ color:#fff;
 background:#2E7D32;
 
 }
+
+
+/*==========================================
+        AOS IMPROVEMENT
+==========================================*/
+
+[data-aos]{
+
+    will-change:transform,opacity;
+
+}
+
+.plant-card{
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.plant-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+/*==========================================
+            PAGE LOADER
+==========================================*/
+
+#loader{
+
+    position:fixed;
+    inset:0;
+    background:#f8fff8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:.5s;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:90px;
+    height:90px;
+    background:#2E7D32;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:42px;
+    margin:auto;
+    animation:loaderBounce 1.2s infinite;
+
+}
+
+.loader-content h3{
+
+    margin-top:18px;
+    color:#2E7D32;
+    font-weight:700;
+
+}
+
+.loader-line{
+
+    width:160px;
+    height:5px;
+    background:#d9ead9;
+    margin:20px auto;
+    border-radius:30px;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.loader-line::after{
+
+    content:"";
+    position:absolute;
+    left:-40%;
+    width:40%;
+    height:100%;
+    background:#2E7D32;
+    animation:loading 1.3s linear infinite;
+
+}
+
+@keyframes loading{
+
+    100%{
+
+        left:100%;
+
+    }
+
+}
+
+@keyframes loaderBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+
+.dark-mode #loader{
+
+    background:#121212;
+
+}
+
+.dark-mode .loader-content h3{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .loader-line{
+
+    background:#2b2b2b;
+
+}
+
+
+
+
+
+
+
+
+/*==========================================
+            TOAST
+==========================================*/
+
+.toast{
+
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.toast-header{
+
+    background:#2E7D32;
+    color:#fff;
+    border:none;
+
+}
+
+.toast-body{
+
+    font-size:15px;
+    font-weight:500;
+    color:#333;
+
+}
+
+.dark-mode .toast{
+
+    background:#1f1f1f;
+    color:#fff;
+
+}
+
+.dark-mode .toast-header{
+
+    background:#388E3C;
+
+}
+
+.dark-mode .toast-body{
+
+    color:#fff;
+
+}
+
+
+/* counter */
+.care-badge{
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:20px;
+    height:20px;
+
+    margin-left:5px;
+
+    border-radius:50%;
+
+    background:#2E7D32;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/*==========================================
+            STATISTICS
+==========================================*/
+
+.stats{
+
+    padding:80px 0;
+    background:#F8FFF8;
+
+}
+
+/*==========================================
+        SECTION TITLE
+==========================================*/
+
+.stats .section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.stats .section-title h2{
+
+    color:#2E7D32;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:15px;
+
+}
+
+.stats .section-title p{
+
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+
+}
+
+
+/*==========================================
+        STAT CARD
+==========================================*/
+
+.stat-card{
+
+    background:#ffffff;
+    border:1px solid #e5e5e5;
+    border-radius:18px;
+    padding:35px 20px;
+    text-align:center;
+    height:100%;
+    transition:.35s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+}
+
+.stat-card i{
+
+    font-size:42px;
+    color:#2E7D32;
+    margin-bottom:20px;
+
+}
+
+.stat-card h2{
+
+    display:inline-block;
+    font-size:42px;
+    font-weight:700;
+    color:#2E7D32;
+    margin-bottom:10px;
+
+}
+
+.stat-card span{
+
+    font-size:28px;
+    font-weight:700;
+    color:#2E7D32;
+    margin-left:2px;
+
+}
+
+.stat-card p{
+
+    margin:0;
+    color:#666;
+    font-size:17px;
+    font-weight:500;
+
+}
+
+
+/*==========================================
+        DARK MODE
+==========================================*/
+
+.dark-mode .stats{
+
+    background:#121212;
+
+}
+
+.dark-mode .stats .section-title h2{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .stats .section-title p{
+
+    color:#cccccc;
+
+}
+
+.dark-mode .stat-card{
+
+    background:#1E1E1E;
+    border:1px solid #333333;
+
+}
+
+.dark-mode .stat-card:hover{
+
+    box-shadow:0 12px 25px rgba(0,0,0,.45);
+
+}
+
+.dark-mode .stat-card i,
+
+.dark-mode .stat-card h2,
+
+.dark-mode .stat-card span{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .stat-card p{
+
+    color:#dddddd;
+
+}
+
+
+/*==========================================
+        RESPONSIVE
+==========================================*/
+
+@media(max-width:991px){
+
+    .stats{
+
+        padding:70px 0;
+
+    }
+
+    .stats .section-title{
+
+        margin-bottom:45px;
+
+    }
+
+    .stats .section-title h2{
+
+        font-size:36px;
+
+    }
+
+    .stat-card{
+
+        padding:30px 18px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .stats{
+
+        padding:60px 0;
+
+    }
+
+    .stats .section-title h2{
+
+        font-size:32px;
+
+    }
+
+    .stats .section-title p{
+
+        font-size:16px;
+
+    }
+
+    .stat-card{
+
+        padding:28px 15px;
+
+    }
+
+    .stat-card i{
+
+        font-size:36px;
+
+    }
+
+    .stat-card h2{
+
+        font-size:36px;
+
+    }
+
+    .stat-card span{
+
+        font-size:24px;
+
+    }
+
+    .stat-card p{
+
+        font-size:16px;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .stats{
+
+        padding:50px 0;
+
+    }
+
+    .stats .section-title{
+
+        margin-bottom:35px;
+
+    }
+
+    .stats .section-title h2{
+
+        font-size:28px;
+
+    }
+
+    .stats .section-title p{
+
+        font-size:15px;
+        line-height:1.7;
+
+    }
+
+    .stat-card{
+
+        padding:25px 15px;
+
+    }
+
+    .stat-card i{
+
+        font-size:32px;
+
+    }
+
+    .stat-card h2{
+
+        font-size:32px;
+
+    }
+
+    .stat-card span{
+
+        font-size:22px;
+
+    }
+
+    .stat-card p{
+
+        font-size:15px;
+
+    }
+
+}
+
+.stat-card i{
+
+    transition:.35s;
+
+}
+
+.stat-card:hover i{
+
+    transform:scale(1.15) rotate(10deg);
+
+}
+

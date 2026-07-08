@@ -20,6 +20,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -33,193 +36,180 @@
 
 <body>
 
-     <!-- ==========================
+    <!-- ==========================
         Navbar Start
 ========================== -->
 
-<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
-    <div class="container">
+        <div class="container">
 
-        <!-- Logo -->
+            <!-- Logo -->
 
-        <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.html">
 
-            🌱 PlantCare
+                🌱 PlantCare
 
-        </a>
+            </a>
 
-        <!-- Mobile Toggle -->
+            <!-- Mobile Toggle -->
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
 
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
 
-        </button>
+            </button>
 
-        <!-- Menu -->
+            <!-- Menu -->
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-                <li class="nav-item">
+                    <li class="nav-item">
 
-                    <a class="nav-link active" href="index.html">
+                        <a class="nav-link active" href="index.html">
 
-                        Home
+                            Home
 
-                    </a>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="nav-item">
+                    <li class="nav-item">
 
-                    <a class="nav-link" href="plants.html">
+                        <a class="nav-link" href="plants.html">
 
-                        Plants
+                            Plants
 
-                    </a>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="nav-item">
+                    <li class="nav-item">
 
-                    <a class="nav-link" href="care-list.html">
+                        <a class="nav-link" href="care-list.html">
 
-                        Care List
+                            Care List
 
-                    </a>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="nav-item">
+                    <li class="nav-item">
 
-                    <a class="nav-link" href="about.html">
+                        <a class="nav-link" href="about.html">
 
-                        About
+                            About
 
-                    </a>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="nav-item">
+                    <li class="nav-item">
 
-                    <a class="nav-link" href="contact.html">
+                        <a class="nav-link" href="contact.html">
 
-                        Contact
+                            Contact
 
-                    </a>
+                        </a>
 
-                </li>
+                    </li>
 
 
-                <!-- Guest -->
+                    <!-- Guest -->
 
-                <li class="nav-item dropdown ms-lg-3" id="guestMenu">
+                    <li class="nav-item dropdown ms-lg-3" id="guestMenu">
 
-                    <button
-                        class="btn dropdown-toggle"
-                        data-bs-toggle="dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
 
-                        Get Started
+                            Get Started
 
-                    </button>
+                        </button>
 
-                    <ul class="dropdown-menu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-menu-end">
 
-                        <li>
+                            <li>
 
-                            <a class="dropdown-item" href="login.html">
+                                <a class="dropdown-item" href="login.html">
 
-                                <i class="fa-solid fa-right-to-bracket me-2"></i>
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i>
 
-                                Login
+                                    Login
 
-                            </a>
+                                </a>
 
-                        </li>
+                            </li>
 
-                        <li>
+                            <li>
 
-                            <a class="dropdown-item" href="signup.html">
+                                <a class="dropdown-item" href="signup.html">
 
-                                <i class="fa-solid fa-user-plus me-2"></i>
+                                    <i class="fa-solid fa-user-plus me-2"></i>
 
-                                Signup
+                                    Signup
 
-                            </a>
+                                </a>
 
-                        </li>
+                            </li>
 
-                    </ul>
+                        </ul>
 
-                </li>
+                    </li>
 
 
-                <!-- Logged In -->
+                    <!-- Logged In -->
 
-                <li class="nav-item dropdown d-none ms-lg-3" id="userMenu">
+                    <li class="nav-item dropdown d-none ms-lg-3" id="userMenu">
 
-                    <button
-                        class="btn dropdown-toggle"
-                        data-bs-toggle="dropdown">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
 
-                        <i class="fa-solid fa-user me-2"></i>
+                            <i class="fa-solid fa-user me-2"></i>
 
-                        <span id="userName"></span>
+                            <span id="userName"></span>
 
-                    </button>
+                        </button>
 
-                    <ul class="dropdown-menu dropdown-menu-end">
+                        <ul class="dropdown-menu dropdown-menu-end">
 
-                        <li>
+                            <li>
 
-                            <a
-                                class="dropdown-item"
-                                href="#"
-                                id="logoutBtn">
+                                <a class="dropdown-item" href="#" id="logoutBtn">
 
-                                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                    <i class="fa-solid fa-right-from-bracket me-2"></i>
 
-                                Logout
+                                    Logout
 
-                            </a>
+                                </a>
 
-                        </li>
+                            </li>
 
-                    </ul>
+                        </ul>
 
-                </li>
+                    </li>
 
 
-                <!-- Theme -->
+                    <!-- Theme -->
 
-                <li class="nav-item ms-lg-3">
+                    <li class="nav-item ms-lg-3">
 
-                    <button
-                        class="btn btn-outline-success"
-                        id="themeBtn">
+                        <button class="btn btn-outline-success" id="themeBtn">
 
-                        <i class="fa-solid fa-moon"></i>
+                            <i class="fa-solid fa-moon"></i>
 
-                    </button>
+                        </button>
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
+
+            </div>
 
         </div>
 
-    </div>
+    </nav>
 
-</nav>
-
-<!-- ==========================
+    <!-- ==========================
         Navbar End
 ========================== -->
 
@@ -249,11 +239,21 @@
                 SEARCH & FILTER
     ===========================================-->
 
-    <section class="plant-filter">
+    <section class="plant-filter" data-aos="fade-down">
 
         <div class="container">
 
             <div class="filter-box">
+
+                <div class="search-result">
+
+                    <span id="resultCount">
+
+                        Showing 0 Plants
+
+                    </span>
+
+                </div>
 
                 <input type="text" id="searchPlant" placeholder="Search by plant name...">
 
@@ -279,7 +279,7 @@
                 ALL PLANTS
     ===========================================-->
 
-    <section class="all-plants">
+    <section class="all-plants" data-aos="zoom-in">
 
         <div class="container">
 
@@ -298,7 +298,7 @@
             FOOTER
     ===========================================-->
 
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
 
         <div class="container">
 
@@ -442,11 +442,28 @@
     <button id="topBtn">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-    
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            duration: 800,
+
+            once: true,
+
+            offset: 80,
+
+            easing: "ease-in-out",
+
+            mirror: false
+
+        });
+    </script>
 
     <!-- Plant Data -->
     <script src="js/plants-data.js"></script>
@@ -458,7 +475,7 @@
     <script src="js/modal.js"></script>
 
     <script src="js/script.js"></script>
-    
+
     <script src="js/auth.js"></script>
 </body>
 

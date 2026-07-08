@@ -12,10 +12,10 @@
 
 .auth-section .container{
 
+    min-height:calc(100vh - 76px);
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:calc(100vh - 76px);
 
 }
 
@@ -41,13 +41,13 @@
     width:80px;
     height:80px;
     margin:0 auto 20px;
-    border-radius:50%;
     background:#2E7D32;
-    color:#fff;
-    font-size:36px;
+    color:#ffffff;
+    border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    font-size:36px;
 
 }
 
@@ -69,24 +69,24 @@
 
 
 /*==========================================
-            FORM
+                FORM
 ==========================================*/
 
 .auth-card label{
 
     display:block;
     text-align:left;
-    font-weight:500;
     margin-bottom:8px;
     color:#333;
+    font-weight:500;
 
 }
 
 .auth-card .form-control{
 
     height:50px;
-    border-radius:8px;
     border:1px solid #ddd;
+    border-radius:8px;
     box-shadow:none;
     transition:.3s;
 
@@ -95,13 +95,14 @@
 .auth-card .form-control:focus{
 
     border-color:#2E7D32;
-    box-shadow:0 0 0 .15rem rgba(46,125,50,.2);
+    outline:none;
+    box-shadow:0 0 0 .15rem rgba(46,125,50,.18);
 
 }
 
 
 /*==========================================
-        PASSWORD FIELD
+            PASSWORD FIELD
 ==========================================*/
 
 .password-box{
@@ -116,25 +117,26 @@
 
 }
 
-.toggle-password{
+.togglePassword{
 
     position:absolute;
     top:50%;
     right:15px;
     transform:translateY(-50%);
+    background:none;
+    border:none;
+    color:#666;
     cursor:pointer;
-    color:#777;
-    font-size:16px;
+    font-size:17px;
     transition:.3s;
 
 }
 
-.toggle-password:hover{
+.togglePassword:hover{
 
     color:#2E7D32;
 
 }
-
 
 /*==========================================
             FORGOT PASSWORD
@@ -149,11 +151,11 @@
 
 .forgot-password a{
 
-    text-decoration:none;
     color:#2E7D32;
     font-size:14px;
     font-weight:500;
-    transition:.3s;
+    text-decoration:none;
+    transition:.3s ease;
 
 }
 
@@ -174,31 +176,39 @@
     width:100%;
     height:50px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     background:#2E7D32;
-    color:#fff;
+    color:#ffffff;
     font-size:16px;
     font-weight:600;
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
 .auth-btn:hover{
 
     background:#1B5E20;
-    color:#fff;
+    color:#ffffff;
     transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(46,125,50,.25);
+
+}
+
+.auth-btn:active{
+
+    transform:scale(.98);
 
 }
 
 
 /*==========================================
-            LINK
+            AUTH LINK
 ==========================================*/
 
 .auth-link{
 
     margin-top:25px;
+    text-align:center;
     color:#666;
     font-size:15px;
 
@@ -209,7 +219,7 @@
     color:#2E7D32;
     font-weight:600;
     text-decoration:none;
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
@@ -219,7 +229,6 @@
     text-decoration:underline;
 
 }
-
 
 /*==========================================
             DARK MODE
@@ -235,6 +244,7 @@
 
     background:#1e1e1e;
     border:1px solid #333;
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
 
 }
 
@@ -247,35 +257,50 @@
 .dark-mode .auth-card p,
 .dark-mode .auth-card label{
 
-    color:#ddd;
+    color:#dddddd;
 
 }
+
+/* Form */
 
 .dark-mode .auth-card .form-control{
 
     background:#2b2b2b;
-    color:#fff;
+    color:#ffffff;
     border:1px solid #555;
+
+}
+
+.dark-mode .auth-card .form-control:focus{
+
+    background:#2b2b2b;
+    color:#ffffff;
+    border-color:#66BB6A;
+    box-shadow:0 0 0 .15rem rgba(102,187,106,.25);
 
 }
 
 .dark-mode .auth-card .form-control::placeholder{
 
-    color:#999;
+    color:#999999;
 
 }
 
-.dark-mode .toggle-password{
+/* Password Toggle */
 
-    color:#bbb;
+.dark-mode .togglePassword{
+
+    color:#bbbbbb;
 
 }
 
-.dark-mode .toggle-password:hover{
+.dark-mode .togglePassword:hover{
 
     color:#66BB6A;
 
 }
+
+/* Forgot Password */
 
 .dark-mode .forgot-password a{
 
@@ -283,9 +308,17 @@
 
 }
 
+.dark-mode .forgot-password a:hover{
+
+    color:#81C784;
+
+}
+
+/* Auth Link */
+
 .dark-mode .auth-link{
 
-    color:#ccc;
+    color:#cccccc;
 
 }
 
@@ -295,22 +328,52 @@
 
 }
 
+.dark-mode .auth-link a:hover{
+
+    color:#81C784;
+
+}
+
+/* Button */
+
+.dark-mode .auth-btn{
+
+    background:#2E7D32;
+    color:#ffffff;
+
+}
+
+.dark-mode .auth-btn:hover{
+
+    background:#1B5E20;
+    color:#ffffff;
+
+}
+
 
 /*==========================================
             RESPONSIVE
 ==========================================*/
 
-@media(max-width:576px){
+@media (max-width:768px){
 
     .auth-section{
 
-        padding:40px 15px;
+        padding:35px 15px;
 
     }
 
     .auth-card{
 
-        padding:30px 22px;
+        padding:32px 24px;
+
+    }
+
+    .auth-logo{
+
+        width:72px;
+        height:72px;
+        font-size:32px;
 
     }
 
@@ -320,32 +383,69 @@
 
     }
 
-    .auth-logo{
+}
 
-        width:70px;
-        height:70px;
-        font-size:30px;
+@media (max-width:576px){
+
+    .auth-section{
+
+        padding:25px 15px;
 
     }
 
-}
+    .auth-card{
 
-.togglePassword{
+        padding:28px 20px;
+        border-radius:15px;
 
-    position:absolute;
-    right:15px;
-    top:50%;
-    transform:translateY(-50%);
-    background:none;
-    border:none;
-    color:#666;
-    cursor:pointer;
-    font-size:17px;
+    }
 
-}
+    .auth-logo{
 
-.togglePassword:hover{
+        width:65px;
+        height:65px;
+        font-size:28px;
+        margin-bottom:18px;
 
-    color:#2E7D32;
+    }
+
+    .auth-card h2{
+
+        font-size:24px;
+
+    }
+
+    .auth-card p{
+
+        font-size:15px;
+        margin-bottom:25px;
+
+    }
+
+    .auth-card .form-control{
+
+        height:48px;
+
+    }
+
+    .auth-btn{
+
+        height:48px;
+        font-size:15px;
+
+    }
+
+    .forgot-password{
+
+        margin:12px 0 20px;
+
+    }
+
+    .auth-link{
+
+        margin-top:20px;
+        font-size:14px;
+
+    }
 
 }

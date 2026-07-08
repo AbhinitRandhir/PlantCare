@@ -4,7 +4,12 @@ console.log("Auth Loaded");
             LOCAL STORAGE
 ==========================================*/
 
-let users = JSON.parse(localStorage.getItem("users")) || [];
+let users = JSON.parse(
+
+    localStorage.getItem("users")
+
+) || [];
+
 
 /*==========================================
             SIGNUP
@@ -18,50 +23,82 @@ if (signupForm) {
 
         e.preventDefault();
 
-        const name = document.getElementById("signupName").value.trim();
+        const name =
+            document.getElementById("signupName").value.trim();
 
-        const email = document.getElementById("signupEmail").value.trim();
+        const email =
+            document.getElementById("signupEmail").value.trim();
 
-        const password = document.getElementById("signupPassword").value;
+        const password =
+            document.getElementById("signupPassword").value;
 
         const confirmPassword =
             document.getElementById("confirmPassword").value;
 
+
+        /*==========================================
+                PASSWORD VALIDATION
+        ==========================================*/
+
         const passwordPattern =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
         if (!passwordPattern.test(password)) {
 
-            alert(
-                "Password must contain:\n\n" +
-                "• At least 8 characters\n" +
-                "• One uppercase letter\n" +
-                "• One lowercase letter\n" +
-                "• One number\n" +
-                "• One special character"
+            showToast(
+
+                "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+
             );
 
             return;
 
         }
 
+
+        /*==========================================
+                PASSWORD MATCH
+        ==========================================*/
+
         if (password !== confirmPassword) {
 
-            alert("Passwords do not match.");
+            showToast(
+
+                "Passwords do not match."
+
+            );
 
             return;
 
         }
 
-        const userExists = users.find(user => user.email === email);
+
+        /*==========================================
+                EMAIL EXISTS
+        ==========================================*/
+
+        const userExists = users.find(
+
+            user => user.email === email
+
+        );
 
         if (userExists) {
 
-            alert("Email already registered.");
+            showToast(
+
+                "Email already registered."
+
+            );
 
             return;
 
         }
+
+
+        /*==========================================
+                SAVE USER
+        ==========================================*/
 
         users.push({
 
@@ -71,9 +108,26 @@ if (signupForm) {
 
         });
 
-        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem(
 
-        alert("Account Created Successfully 🌱");
+            "users",
+
+            JSON.stringify(users)
+
+        );
+
+
+        /*==========================================
+                SUCCESS
+        ==========================================*/
+
+        localStorage.setItem(
+
+            "toastMessage",
+
+            "✅ Account Created Successfully"
+
+        );
 
         window.location.href = "login.html";
 
@@ -93,9 +147,11 @@ if (loginForm) {
 
         e.preventDefault();
 
-        const email = document.getElementById("loginEmail").value.trim();
+        const email =
+            document.getElementById("loginEmail").value.trim();
 
-        const password = document.getElementById("loginPassword").value;
+        const password =
+            document.getElementById("loginPassword").value;
 
         const user = users.find(
 
@@ -106,15 +162,33 @@ if (loginForm) {
 
         );
 
+        /*==========================================
+                INVALID LOGIN
+        ==========================================*/
+
         if (!user) {
 
-            alert("Invalid Email or Password.");
+            showToast(
+
+                "❌ Invalid Email or Password"
+
+            );
 
             return;
 
         }
 
-        localStorage.setItem("isLoggedIn", "true");
+        /*==========================================
+                LOGIN SUCCESS
+        ==========================================*/
+
+        localStorage.setItem(
+
+            "isLoggedIn",
+
+            "true"
+
+        );
 
         localStorage.setItem(
 
@@ -124,13 +198,20 @@ if (loginForm) {
 
         );
 
-        alert(`Welcome ${user.name} 🌱`);
+        localStorage.setItem(
+
+            "toastMessage",
+
+            `🌱 Welcome ${user.name}`
+
+        );
 
         window.location.href = "index.html";
 
     });
 
 }
+
 
 /*==========================================
             LOGOUT
@@ -146,7 +227,13 @@ if (logoutBtn) {
 
         localStorage.removeItem("loggedInUser");
 
-        alert("Logged Out Successfully.");
+        localStorage.setItem(
+
+            "toastMessage",
+
+            "👋 Logged Out Successfully"
+
+        );
 
         window.location.href = "index.html";
 
@@ -166,6 +253,11 @@ const userName = document.getElementById("userName");
 
 const isLoggedIn = localStorage.getItem("isLoggedIn");
 
+
+/*==========================================
+            SHOW USER
+==========================================*/
+
 if (isLoggedIn) {
 
     guestMenu?.classList.add("d-none");
@@ -178,7 +270,7 @@ if (isLoggedIn) {
 
     );
 
-    if (userName) {
+    if (user && userName) {
 
         userName.textContent = user.name;
 
@@ -192,6 +284,7 @@ else {
     userMenu?.classList.add("d-none");
 
 }
+
 
 /*==========================================
         PROTECTED PAGES
@@ -218,11 +311,18 @@ if (
 
 ) {
 
-    alert("Please login to access this page.");
+    localStorage.setItem(
+
+        "toastMessage",
+
+        "🔒 Please login first."
+
+    );
 
     window.location.href = "login.html";
 
 }
+
 
 /*==========================================
         FORGOT PASSWORD
@@ -248,17 +348,19 @@ if (forgotForm) {
 
         if (!user) {
 
-            alert("No account found with this email.");
+            showToast(
+
+                "❌ No account found with this email."
+
+            );
 
             return;
 
         }
 
-        alert(
+        showToast(
 
-            "This project uses LocalStorage only.\n\n" +
-
-            "Password reset by email requires a backend."
+            "ℹ This demo uses LocalStorage only. Password reset email requires a backend."
 
         );
 
@@ -283,6 +385,8 @@ toggleButtons.forEach(button => {
                 this.dataset.target
 
             );
+
+        if (!input) return;
 
         const icon =
             this.querySelector("i");
@@ -309,3 +413,62 @@ toggleButtons.forEach(button => {
     });
 
 });
+
+
+/*==========================================
+            GLOBAL TOAST
+==========================================*/
+
+function showToast(message) {
+
+    const toastElement =
+        document.getElementById("liveToast");
+
+    const toastMessage =
+        document.getElementById("toastMessage");
+
+    if (!toastElement || !toastMessage) {
+
+        alert(message);
+
+        return;
+
+    }
+
+    toastMessage.innerHTML = message;
+
+    const toast = new bootstrap.Toast(
+
+        toastElement,
+
+        {
+
+            delay:2500
+
+        }
+
+    );
+
+    toast.show();
+
+}
+
+
+/*==========================================
+        SHOW SAVED TOAST
+==========================================*/
+
+const savedToast =
+    localStorage.getItem("toastMessage");
+
+if (savedToast) {
+
+    setTimeout(() => {
+
+        showToast(savedToast);
+
+        localStorage.removeItem("toastMessage");
+
+    },300);
+
+}

@@ -18,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -254,7 +258,7 @@
 
                 <div class="col-lg-5">
 
-                    <div class="contact-info">
+                    <div class="contact-info" data-aos="fade-right">
 
                         <h2>Get In Touch</h2>
 
@@ -316,7 +320,7 @@
 
                     <div class="contact-form">
 
-                        <form action="https://api.web3forms.com/submit" method="POST">
+                        <form action="https://api.web3forms.com/submit" method="POST" data-aos="fade-left">
 
                             <!-- Access Key -->
                             <input type="hidden" name="access_key" value="a1018500-171a-44f3-93e7-66d850e16823">
@@ -374,7 +378,7 @@
             FOOTER
     ===========================================-->
 
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
 
         <div class="container">
 
@@ -443,9 +447,25 @@
     </footer>
 
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Animation -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+
+            duration: 800,
+
+            once: true,
+
+            offset: 80,
+
+            easing: "ease-in-out",
+
+            mirror: false
+
+        });
+    </script>
+
     <script src="js/script.js"></script>
     <script src="js/auth.js"></script>
 

@@ -10,10 +10,11 @@ if (featuredPlants && typeof plants !== "undefined") {
 
     let cards = "";
 
-    plants.slice(0, 4).forEach((plant) => {
+    plants.slice(0,4).forEach((plant,index)=>{
 
         cards += `
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in"
+                data-aos-delay="${index * 100}">
 
                 <div class="plant-card">
 
@@ -39,6 +40,7 @@ if (featuredPlants && typeof plants !== "undefined") {
     });
 
     featuredPlants.innerHTML = cards;
+    AOS.refresh();
 
 }
 
@@ -147,3 +149,143 @@ themeBtn?.addEventListener("click", function () {
     }
 
 });
+
+//==========================================
+// PAGE LOADER
+//==========================================
+
+window.addEventListener("load",()=>{
+
+    const loader=document.getElementById("loader");
+
+    if(loader){
+
+        setTimeout(()=>{
+
+            loader.style.opacity="0";
+
+            loader.style.visibility="hidden";
+
+        },1000);
+
+    }
+
+});
+//==========================================
+// TOAST
+//==========================================
+
+function showToast(message) {
+
+    const toastMessage = document.getElementById("toastMessage");
+
+    if (!toastMessage) return;
+
+    toastMessage.textContent = message;
+
+    const toast = new bootstrap.Toast(
+
+        document.getElementById("liveToast"),
+
+        {
+
+            delay:2500
+
+        }
+
+    );
+
+    toast.show();
+
+}
+
+
+//==========================================
+// CARE LIST COUNTER
+//==========================================
+
+function updateCareCount() {
+
+    const badge = document.getElementById("careCount");
+
+    if (!badge) return;
+
+    const careList = JSON.parse(
+
+        localStorage.getItem("careList")
+
+    ) || [];
+
+    badge.textContent = careList.length;
+
+}
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    updateCareCount
+
+);
+
+
+//==========================================
+// ANIMATED COUNTER
+//==========================================
+
+const counters = document.querySelectorAll(".counter");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+
+            const target = +counter.dataset.target;
+
+            let count = 0;
+
+            const speed = target / 60;
+
+            const updateCounter = () => {
+
+                count += speed;
+
+                if (count < target) {
+
+                    counter.textContent = Math.ceil(count);
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    counter.textContent = target;
+
+                }
+
+            };
+
+            updateCounter();
+
+            observer.unobserve(counter);
+
+        }
+
+    });
+
+}, {
+
+    threshold:0.5
+
+});
+
+counters.forEach(counter => {
+
+    observer.observe(counter);
+
+});
+
+
+
