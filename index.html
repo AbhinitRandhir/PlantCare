@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🌱 PlantCare | Grow Healthy</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/plants.css"> -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+
+<!-- ==========================
+        Navbar Start
+========================== -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a class="navbar-brand" href="index.html">
+
+            🌱 PlantCare
+
+        </a>
+
+        <!-- Mobile Toggle -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- Menu -->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+
+                    <a class="nav-link active" href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="plants.html">
+
+                        Plants
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="care-list.html">
+
+                        Care List
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- Guest -->
+
+                <li class="nav-item dropdown ms-lg-3" id="guestMenu">
+
+                    <button
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        Get Started
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+
+                            <a class="dropdown-item" href="login.html">
+
+                                <i class="fa-solid fa-right-to-bracket me-2"></i>
+
+                                Login
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a class="dropdown-item" href="signup.html">
+
+                                <i class="fa-solid fa-user-plus me-2"></i>
+
+                                Signup
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- Logged In -->
+
+                <li class="nav-item dropdown d-none ms-lg-3" id="userMenu">
+
+                    <button
+                        class="btn dropdown-toggle"
+                        data-bs-toggle="dropdown">
+
+                        <i class="fa-solid fa-user me-2"></i>
+
+                        <span id="userName"></span>
+
+                    </button>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                id="logoutBtn">
+
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>
+
+                                Logout
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- Theme -->
+
+                <li class="nav-item ms-lg-3">
+
+                    <button
+                        class="btn btn-outline-success"
+                        id="themeBtn">
+
+                        <i class="fa-solid fa-moon"></i>
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ==========================
+        Navbar End
+========================== -->
+
+
+
+    <!--==========================================
+            HERO SECTION
+===========================================-->
+    <section class="hero py-5">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Left Content -->
+                <div class="col-lg-6">
+
+                    <h1 class="display-4 fw-bold">
+                        Grow Healthy <span class="text-success">Plants</span> with PlantCare
+                    </h1>
+
+                    <p class="lead text-secondary my-4">
+                        Discover easy plant care guides, watering schedules, and tips to keep your indoor and outdoor
+                        plants healthy.
+                    </p>
+                    <a href="plants.html" class="btn btn-success btn-lg me-3">
+                        Explore Plants
+                    </a>
+
+                    <a href="about.html" class="btn btn-outline-success btn-lg">
+                        Learn More
+                    </a>
+
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6 d-flex justify-content-end align-items-center mt-5 mt-lg-0">
+
+                    <img src="images/hero-plant.png" alt="Plant Hero" class="img-fluid hero-img mt-4">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!--==========================================
+            CATEGORIES SECTION
+===========================================-->
+
+    <section class="categories">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Plant Categories</h2>
+                <p>Choose the perfect plants based on your needs.</p>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="category-card">
+                        <i class="fa-solid fa-house category-icon"></i>
+                        <h4>Indoor Plants</h4>
+                        <p>Easy to grow plants for your home and office.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="category-card">
+                        <i class="fa-solid fa-seedling category-icon"></i>
+                        <h4>Outdoor Plants</h4>
+                        <p>Beautiful plants that thrive in open spaces.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="category-card">
+                        <i class="fa-solid fa-spa category-icon"></i>
+                        <h4>Succulents</h4>
+                        <p>Low-maintenance plants perfect for beginners.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="category-card">
+                        <i class="fa-solid fa-leaf category-icon"></i>
+                        <h4>Flowering Plants</h4>
+                        <p>Add color and fragrance to your surroundings.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--==========================================
+        FEATURED PLANTS
+    ===========================================-->
+
+    <section class="featured-plants">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Featured Plants</h2>
+
+                <p>
+                    Discover some of our popular indoor plants and explore their care guides.
+                </p>
+
+            </div>
+
+            <div class="row" id="featuredPlants">
+
+                <!-- JavaScript -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--==========================================
+            WHY CHOOSE US
+===========================================-->
+
+    <section class="why-us">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Why Choose PlantCare?</h2>
+
+                <p>Everything you need to keep your home plants healthy and beautiful.</p>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="why-card">
+
+                        <i class="fa-solid fa-seedling"></i>
+
+                        <h4>Easy Care Tips</h4>
+
+                        <p>Simple plant care guides for beginners.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="why-card">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                        <h4>Water Guide</h4>
+
+                        <p>Know exactly when your plant needs water.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="why-card">
+
+                        <i class="fa-solid fa-sun"></i>
+
+                        <h4>Sunlight Info</h4>
+
+                        <p>Find the right light for every plant.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="why-card">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <h4>Save Favorites</h4>
+
+                        <p>Keep your favorite plants in one place.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--==========================================
+            FOOTER
+    ===========================================-->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- About -->
+                <div class="col-md-4">
+
+                    <h3>🌱 PlantCare</h3>
+
+                    <p>
+                        PlantCare helps you grow healthy indoor plants with easy care tips,
+                        watering schedules, and sunlight guides.
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4">
+
+                    <h4>Quick Links</h4>
+
+                    <ul class="footer-links">
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="plants.html">Plants</a></li>
+                        <li><a href="care-list.html">CareList</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4">
+
+                    <h4>Contact</h4>
+
+                    <p><i class="fa-solid fa-envelope"></i> plantcare@gmail.com</p>
+
+                    <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+
+                    <div class="social-icons">
+
+                        <a href="https://github.com/AbhinitRandhir"><i class="fab fa-github"></i></a>
+
+                        <a href="https://www.linkedin.com/in/abhinit94/"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="copyright">
+                © 2026 PlantCare. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!--==========================================
+            PLANT DETAILS MODAL
+    ===========================================-->
+
+    <div class="modal fade" id="plantModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title">Plant Details</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+                <div class="modal-body" id="modalBody">
+
+                    <!-- JavaScript -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--==========================================
+            BACK TO TOP
+    ===========================================-->
+
+    <button id="topBtn">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/plants-data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/modal.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,973 @@
+/*==========================================
+            ROOT COLORS
+==========================================*/
+
+:root{
+
+    --primary:#2E7D32;
+    --secondary:#66BB6A;
+    --light:#f8fff8;
+    --white:#ffffff;
+    --text:#333;
+    --gray:#666;
+    --border:#e8e8e8;
+    --bg:#f8fff8;
+    --card:#ffffff;
+
+}
+
+/*==========================================
+            TEXT SELECTION
+==========================================*/
+
+::selection{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/*==========================================
+        Google Font
+==========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    transition:.3s ease;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8fff8;
+    color:#333;
+}
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+
+/*==========================================
+            NAVBAR
+==========================================*/
+
+.navbar{
+
+    background:#ffffff;
+    padding:12px 0;
+    border-bottom:1px solid #e8e8e8;
+    transition:.3s ease;
+    z-index:1000;
+
+}
+
+.navbar-brand{
+
+    font-size:30px;
+    font-weight:700;
+    color:#2E7D32 !important;
+    letter-spacing:.5px;
+    transition:.3s;
+
+}
+
+.navbar-brand:hover{
+
+    color:#1B5E20 !important;
+
+}
+
+/*==========================
+        MENU
+==========================*/
+
+.navbar-nav{
+
+    align-items:center;
+    gap:6px;
+
+}
+
+.nav-link{
+
+    position:relative;
+    color:#444 !important;
+    font-size:16px;
+    font-weight:500;
+    padding:8px 14px !important;
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#2E7D32 !important;
+
+}
+
+/* Active */
+
+.nav-link.active{
+
+    color:#2E7D32 !important;
+    font-weight:600;
+
+}
+
+/*==========================================
+        NAV LINK UNDERLINE
+==========================================*/
+
+.nav-link::after{
+
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:2px;
+    width:0;
+    height:2px;
+    background:#2E7D32;
+    border-radius:50px;
+    transform:translateX(-50%);
+    transition:.3s;
+
+}
+
+/* Hover */
+
+.nav-link:hover::after{
+
+    width:60%;
+
+}
+
+/* Active */
+
+.nav-link.active::after{
+
+    width:0;
+
+}
+
+
+/*==========================
+        GET STARTED
+==========================*/
+
+#guestMenu .btn,
+#userMenu .btn{
+
+    background:#2E7D32;
+    border:none;
+    color:#fff;
+    border-radius:30px;
+    padding:9px 22px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+#guestMenu .btn:hover,
+#userMenu .btn:hover{
+
+    background:#1B5E20;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(46,125,50,.25);
+
+}
+
+
+/*==========================
+        DROPDOWN
+==========================*/
+
+.dropdown-menu{
+
+    border:none;
+    border-radius:12px;
+    padding:8px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.dropdown-item{
+
+    border-radius:8px;
+    padding:10px 15px;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+.dropdown-item:hover{
+
+    background:#2E7D32;
+    color:#fff;
+
+}
+
+
+/*==========================
+        THEME BUTTON
+==========================*/
+
+#themeBtn{
+
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+
+}
+
+#themeBtn:hover{
+
+    background:#2E7D32;
+    color:#fff;
+    border-color:#2E7D32;
+    transform:rotate(20deg);
+
+}
+
+
+/*==========================
+        TOGGLER
+==========================*/
+
+.navbar-toggler{
+
+    border:none;
+
+}
+
+.navbar-toggler:focus{
+
+    box-shadow:none;
+
+}
+
+
+#themeBtn i{
+
+    transition:.3s;
+    font-size:18px;
+
+}
+
+#themeBtn:hover i{
+
+    transform:rotate(20deg);
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:991px){
+
+    .navbar{
+
+        padding:12px 0;
+
+    }
+
+    .navbar-collapse{
+
+        margin-top:15px;
+        background:#fff;
+        border-radius:12px;
+        padding:15px;
+
+    }
+
+    .navbar-nav{
+
+        gap:0;
+
+    }
+
+    .nav-link{
+
+        padding:12px !important;
+
+    }
+
+    .nav-link::after{
+
+        display:none;
+
+    }
+
+    #guestMenu,
+    #userMenu{
+
+        margin-top:15px;
+
+    }
+
+    #themeBtn{
+
+        margin-top:15px;
+
+    }
+
+}
+
+
+
+/*==========================================
+            HERO SECTION
+==========================================*/
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero h1{
+    line-height:1.3;
+}
+
+.hero-img{
+    max-width:400px;
+    width:100%;
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+
+/*==========================================
+        CATEGORIES SECTION
+==========================================*/
+
+.categories{
+    padding:80px 0;
+    background:#f6fbf6;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:#666;
+    margin-top:10px;
+}
+
+.category-card{
+    background:#fff;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:15px;
+    margin-bottom:25px;
+    border:1px solid #e5e5e5;
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.category-icon{
+    font-size:45px;
+    color:#2E7D32;
+    margin-bottom:20px;
+}
+
+.category-card h4{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.category-card p{
+    color:#666;
+    font-size:15px;
+}
+
+
+/*==========================================
+        FEATURED PLANTS
+==========================================*/
+
+.featured-plants{
+
+    padding:80px 0;
+    background:#f8fff8;
+
+}
+
+.plant-card{
+
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:15px;
+    overflow:hidden;
+    margin-bottom:25px;
+    transition:.3s;
+
+}
+
+.plant-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.plant-card img{
+
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    transition:.4s;
+
+}
+
+.plant-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.plant-info{
+
+    padding:22px;
+    text-align:center;
+
+}
+
+.plant-info h4{
+
+    color:#2E7D32;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:10px;
+
+}
+
+.plant-info p{
+
+    color:#666;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:20px;
+
+}
+
+.explore-btn{
+
+    display:inline-block;
+    background:#2E7D32;
+    color:#fff;
+    padding:10px 24px;
+    border-radius:8px;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+.explore-btn:hover{
+
+    background:#1B5E20;
+    color:#fff;
+
+}
+
+
+
+/*==========================================
+            WHY CHOOSE US
+==========================================*/
+
+.why-us{
+
+    padding:80px 0;
+    background:#f6fbf6;
+
+}
+
+.why-card{
+
+    background:#fff;
+    text-align:center;
+    padding:30px 20px;
+    border-radius:15px;
+    border:1px solid #e5e5e5;
+    margin-bottom:25px;
+    transition:.3s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.why-card i{
+
+    font-size:45px;
+    color:#2E7D32;
+    margin-bottom:20px;
+
+}
+
+.why-card h4{
+
+    margin-bottom:15px;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+}
+
+
+
+/*==========================================
+            FOOTER
+==========================================*/
+
+.footer{
+
+    background:#1b4332;
+    color:#fff;
+    padding:60px 0 20px;
+
+}
+
+.footer h3,
+.footer h4{
+
+    margin-bottom:20px;
+
+}
+
+.footer p{
+
+    color:#d8d8d8;
+
+}
+
+.footer-links{
+
+    list-style:none;
+    padding:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:10px;
+
+}
+
+.footer-links a{
+
+    color:#d8d8d8;
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#66BB6A;
+
+}
+
+.social-icons a{
+
+    display:inline-block;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background:#2E7D32;
+    color:#fff;
+    border-radius:50%;
+    margin-right:10px;
+    transition:.3s;
+
+}
+
+.social-icons a:hover{
+
+    background:#66BB6A;
+
+}
+
+.copyright{
+
+    text-align:center;
+    margin-top:20px;
+    color:#ccc;
+
+}
+
+
+/*==========================================
+            TOAST
+==========================================*/
+
+.toast{
+
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.toast-header{
+
+    background:#2E7D32;
+    color:#fff;
+    border-bottom:none;
+
+}
+
+.toast-header .btn-close{
+
+    filter: brightness(0) invert(1);
+
+}
+
+.toast-body{
+
+    background:#ffffff;
+    color:#333;
+    font-size:15px;
+    font-weight:500;
+    padding:15px 18px;
+
+}
+
+
+/*==========================================
+        BACK TO TOP
+==========================================*/
+
+#topBtn{
+
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#2E7D32;
+    color:#fff;
+    font-size:18px;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+    transition:.3s;
+
+}
+
+#topBtn:hover{
+
+    background:#1B5E20;
+    transform:translateY(-3px);
+
+}
+
+
+
+
+/*==========================================
+            THEME COLORS
+==========================================*/
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+
+}
+
+
+/*==========================================
+            GLOBAL DARK MODE
+==========================================*/
+
+.dark-mode{
+
+    background:#121212;
+    color:#fff;
+
+}
+
+.dark-mode .navbar{
+
+    background:#1a1a1a !important;
+
+}
+
+.dark-mode .page-header,
+.dark-mode .hero,
+.dark-mode .featured-plants,
+.dark-mode .categories,
+.dark-mode .why-us,
+.dark-mode .plant-filter,
+.dark-mode .all-plants,
+.dark-mode .about,
+.dark-mode .mission,
+.dark-mode .contact,
+.dark-mode .care-list{
+
+    background:#121212;
+
+}
+
+.dark-mode .plant-card,
+.dark-mode .category-card,
+.dark-mode .why-card,
+.dark-mode .mission-card,
+.dark-mode .contact-form,
+.dark-mode .contact-info{
+
+    background:#1e1e1e;
+    border:1px solid #333;
+
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode p,
+.dark-mode label,
+.dark-mode li{
+
+    color:#ddd;
+
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select{
+
+    background:#2b2b2b;
+    color:#fff;
+    border:1px solid #555;
+
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder{
+
+    color:#aaa;
+
+}
+
+.dark-mode .modal-content{
+
+    background:#1e1e1e;
+    color:#fff;
+
+}
+
+.dark-mode .toast-body{
+
+    background:#1e1e1e;
+    color:#fff;
+
+}
+
+.dark-mode .footer{
+
+    background:#0d0d0d;
+
+}
+
+.dark-mode .nav-link,
+.dark-mode .navbar-brand{
+
+    color:#fff !important;
+
+}
+
+.dark-mode .nav-link.active{
+
+    color:#66BB6A !important;
+
+}
+
+.dark-mode .values{
+
+    background:#121212;
+
+}
+
+.dark-mode .value-card{
+
+    background:#1e1e1e;
+    border:1px solid #333;
+
+}
+
+.dark-mode .value-card h4{
+
+    color:#66BB6A;
+
+}
+
+.dark-mode .value-card p{
+
+    color:#ddd;
+
+}
+
+
+
+/*==========================================
+            PAGE HEADER
+==========================================*/
+
+.page-header{
+
+    background:linear-gradient(135deg,#2E7D32,#4CAF50);
+    color:#fff;
+    text-align:center;
+    padding:35px 0;
+
+}
+
+.page-header h1{
+
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    font-size:17px;
+    color:#e8f5e9;
+    margin:0;
+
+}
+
+/*==========================================
+        RESPONSIVE
+==========================================*/
+
+@media (max-width:768px){
+
+    .page-header{
+
+        padding:25px 0;
+
+    }
+
+    .page-header h1{
+
+        font-size:30px;
+
+    }
+
+    .page-header p{
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/*==========================================
+            USER MENU
+==========================================*/
+
+.dropdown-menu{
+
+    border:none;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+.dropdown-item{
+
+    padding:10px 18px;
+    font-weight:500;
+
+}
+
+.dropdown-item:hover{
+
+    background:#2E7D32;
+    color:#fff;
+
+}
+
+.dark-mode .dropdown-menu{
+
+background:#222;
+
+}
+
+.dark-mode .dropdown-item{
+
+color:#fff;
+
+}
+
+.dark-mode .dropdown-item:hover{
+
+background:#2E7D32;
+
+}

@@ -1,0 +1,82 @@
+/*==========================================
+            CARE LIST
+==========================================*/
+
+.care-list{
+
+    padding:80px 0;
+
+}
+
+/*==========================================
+            BUTTONS
+==========================================*/
+
+.plant-btn{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-top:20px;
+
+}
+
+
+/*==========================================
+        CARE GUIDE BUTTON
+==========================================*/
+
+.details-btn{
+
+    flex:1;
+    background:#2E7D32;
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.details-btn:hover{
+
+    background:#1B5E20;
+    transform:translateY(-2px);
+
+}
+
+
+/*==========================================
+        REMOVE BUTTON
+==========================================*/
+
+.remove-btn{
+
+    background:#dc3545;
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+    background:#bb2d3b;
+    transform:translateY(-2px);
+
+}
+
+.remove-btn i{
+
+    margin-right:6px;
+
+}

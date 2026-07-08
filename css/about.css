@@ -1,0 +1,231 @@
+
+/*==========================================
+            ABOUT SECTION
+==========================================*/
+
+.about{
+
+    padding:80px 0;
+    background:#ffffff;
+
+}
+
+.about .row{
+
+    min-height:450px;
+
+}
+
+.about img{
+
+    width:100%;
+    max-width:360px;
+    display:block;
+    margin:auto;
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.15));
+
+}
+
+.about h2{
+
+    color:#2E7D32;
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+
+}
+
+.about p{
+
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:18px;
+
+}
+
+.about .btn{
+
+    padding:10px 22px;
+    border-radius:8px;
+    font-weight:500;
+
+}
+
+
+
+/*==========================================
+            MISSION SECTION
+==========================================*/
+
+.mission{
+
+    padding:80px 0;
+    background:#f8fff8;
+
+}
+
+.mission-card{
+
+    background:#fff;
+    text-align:center;
+    padding:35px 25px;
+    border:1px solid #e5e5e5;
+    border-radius:15px;
+    margin-bottom:25px;
+    transition:.3s;
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.mission-card i{
+
+    font-size:45px;
+    color:#2E7D32;
+    margin-bottom:20px;
+
+}
+
+.mission-card h4{
+
+    color:#2E7D32;
+    font-size:22px;
+    margin-bottom:15px;
+
+}
+
+.mission-card p{
+
+    color:#666;
+    font-size:15px;
+    line-height:1.7;
+
+}
+
+
+
+/*==========================================
+            RESPONSIVE
+==========================================*/
+
+@media(max-width:991px){
+
+    .about{
+
+        text-align:center;
+
+    }
+
+    .about .row{
+
+        min-height:auto;
+
+    }
+
+    .about img{
+
+        max-width:300px;
+        margin-bottom:35px;
+
+    }
+
+    .about h2{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .about,
+    .mission{
+
+        padding:60px 0;
+
+    }
+
+    .about h2{
+
+        font-size:30px;
+
+    }
+
+    .about p{
+
+        font-size:16px;
+
+    }
+
+    .mission-card{
+
+        padding:30px 20px;
+
+    }
+
+}
+
+
+/*==========================================
+            OUR VALUES
+==========================================*/
+
+.values{
+
+    padding:80px 0;
+    background:#f8fff8;
+
+}
+
+.value-card{
+
+    background:#ffffff;
+    padding:35px 25px;
+    border:1px solid #e5e5e5;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+    height:100%;
+
+}
+
+.value-card:hover{
+
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.value-card i{
+
+    font-size:45px;
+    color:#2E7D32;
+    margin-bottom:20px;
+
+}
+
+.value-card h4{
+
+    color:#2E7D32;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:15px;
+
+}
+
+.value-card p{
+
+    color:#666;
+    font-size:15px;
+    line-height:1.7;
+    margin:0;
+
+}
+
